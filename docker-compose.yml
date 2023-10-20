@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  jupyterhub:
+    build: .
+    restart: always
+    container_name: jupyterhub
+    privileged: true
+    volumes:
+      - jupyterhub-userdata:/home
+      - jupyterhub-etcdata:/etc
+    ports:
+      - "8000:8000"
+
+volumes:
+  jupyterhub-userdata:
+    external: true
+  jupyterhub-etcdata:
+    external: true
