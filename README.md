@@ -154,32 +154,3 @@ server {
     server_name localhost;
 }
 ```
-
-## Accessing Docker images across firewall
-
-Create a SSH link
-
-```bash
-ssh -L 5050:gitlab.tue.nl:5050 ivo@gpufarm.catalysis.nl
-```
-
-and use token-based login
-
-```bash
-sudo docker login -u __token__ -p <TOKEN> localhost:5050/ifilot/tue-jupyterhub
-```
-
-after which one can download the container
-
-```bash
-sudo docker pull localhost:5050/ifilot/tue-jupyterhub/tue-jupyter:latest
-```
-
-and tag this image
-
-```bash
-sudo docker image tag localhost:5050/ifilot/tue-jupyterhub/tue-jupyter:latest tue-jupyterhub/tue-jupyter:latest
-```
-
-Note that the image name needs to be changed to `tue-jupyterhub/tue-jupyter:latest` in the
-`docker-compose.yml` file.
