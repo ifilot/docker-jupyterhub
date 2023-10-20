@@ -10,12 +10,12 @@ however want to retain the data between classes, you can make use of docker volu
 
 ## Running locally
 
-### Accessing Docker registry
+### Downloading Docker image
 
-Ensure you can access the Docker registry
+Ensure you download the Docker image via
 
 ```bash
-docker login -u __token__ -p <TOKEN> gitlab.tue.nl:5050/ifilot/tue-jupyterhub
+docker pull ghcr.io/ifilot/docker-jupyterhub:v0.1.0
 ```
 
 ### Command-line
